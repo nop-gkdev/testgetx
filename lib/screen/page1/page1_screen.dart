@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:get_storage/get_storage.dart';
-import 'package:testgetx/controller/controller.dart';
-import 'package:testgetx/page1/controller/page1_controller.dart';
-import 'package:testgetx/page2/view/page2_screen.dart';
+import 'package:testgetx/controller/default_controller.dart';
+import 'package:testgetx/controller/page1/counter_controller.dart';
+import 'package:testgetx/controller/page1/language_controller.dart';
+import 'package:testgetx/controller/page1/theme_controller.dart';
+import 'package:testgetx/screen/page2/page2_screen.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -86,6 +88,7 @@ class _Page1State extends State<Page1> {
         onPressed: () {
           controller.incrementCounter();
         },
+        // onPressed: controller.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

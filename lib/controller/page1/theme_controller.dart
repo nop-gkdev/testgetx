@@ -1,16 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-// ignore: camel_case_types
-class titleController extends GetxController {
-  var titlename1 = "PAGE1";
-  var titlename2 = "PAGE2";
-}
-
-class NavigateController extends GetxController {
-  navigate2() => Get.toNamed('/Page2');
-}
-
 class ThemeController extends GetxController {
   var isDark = false;
   var count = 0;
@@ -79,26 +69,6 @@ class ThemeController extends GetxController {
               disabledColor: Color.fromARGB(255, 4, 31, 54),
             )),
       );
-    }
-    update();
-  }
-}
-
-class LanguageController extends GetxController {
-  var language = false;
-  var count = 0;
-  void increment() {
-    count++;
-    update();
-  }
-
-  changeLanguage(state) {
-    if (state == true) {
-      language = true;
-      Get.updateLocale(const Locale('th', 'THA'));
-    } else {
-      language = false;
-      Get.updateLocale(const Locale('en', 'US'));
     }
     update();
   }

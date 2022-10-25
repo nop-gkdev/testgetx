@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:testgetx/controller/controller.dart';
-import 'package:testgetx/page1/controller/page1_controller.dart';
-
-import '../../controller/api_controller.dart';
+import 'package:testgetx/controller/default_controller.dart';
+import 'package:testgetx/controller/initialbinding/api_controller.dart';
+import 'package:testgetx/controller/page1/counter_controller.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
