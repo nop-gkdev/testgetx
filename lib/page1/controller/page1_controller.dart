@@ -28,7 +28,7 @@ class CounterController extends GetxController {
         "Snackbar $counter",
         colorText: Colors.white,
         backgroundColor: const Color.fromARGB(255, 250, 41, 41),
-        snackPosition: SnackPosition.BOTTOM,
+        snackPosition: SnackPosition.TOP,
         titleText: const Text(
           "ไม่ใช่ 5!!",
           style: TextStyle(color: Colors.white),
