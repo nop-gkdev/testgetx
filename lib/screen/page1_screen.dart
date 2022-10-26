@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:get_storage/get_storage.dart';
-import 'package:testgetx/controller/default_controller.dart';
-import 'package:testgetx/controller/page1/counter_controller.dart';
-import 'package:testgetx/controller/page1/language_controller.dart';
-import 'package:testgetx/controller/page1/theme_controller.dart';
-import 'package:testgetx/screen/page2/page2_screen.dart';
+import 'package:testgetx/controller/home/counter_controller.dart';
+import 'package:testgetx/controller/home/language_controller.dart';
+import 'package:testgetx/theme/theme_controller.dart';
+import 'package:testgetx/screen/page2_screen.dart';
 
 class Page1 extends StatefulWidget {
   const Page1({super.key});
@@ -15,10 +14,10 @@ class Page1 extends StatefulWidget {
 }
 
 class _Page1State extends State<Page1> {
-  final titleController titlecontroller = Get.put(titleController());
   final CounterController controller = Get.put(CounterController());
   final ThemeController themecontroller = Get.put(ThemeController());
   final LanguageController languagecontroller = Get.put(LanguageController());
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

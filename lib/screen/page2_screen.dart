@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:testgetx/controller/default_controller.dart';
 import 'package:testgetx/controller/initialbinding/api_controller.dart';
-import 'package:testgetx/controller/page1/counter_controller.dart';
+import 'package:testgetx/controller/home/counter_controller.dart';
 
 class Page2 extends StatefulWidget {
   const Page2({super.key});
@@ -13,7 +12,6 @@ class Page2 extends StatefulWidget {
 
 class _Page2State extends State<Page2> {
   final CounterController controller = Get.put(CounterController());
-  final titleController titlecontroller = Get.put(titleController());
   final apicontroller = Get.find<Controller>();
 
   @override
