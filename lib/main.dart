@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-// import 'package:get_storage/get_storage.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:testgetx/screen/page1_screen.dart';
 import 'controller/initialbinding/controller_bindings.dart';
 import 'translation/translation.dart';
 
 Future<void> main() async {
-  // await GetStorage.init();
+  await GetStorage.init();
   runApp(const MyApp());
 }
 

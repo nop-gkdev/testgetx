@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 // import 'package:get_storage/get_storage.dart';
 import 'package:testgetx/controller/home/counter_controller.dart';
 import 'package:testgetx/controller/home/language_controller.dart';
@@ -17,9 +18,21 @@ class _Page1State extends State<Page1> {
   final CounterController controller = Get.put(CounterController());
   final ThemeController themecontroller = Get.put(ThemeController());
   final LanguageController languagecontroller = Get.put(LanguageController());
+  final box = GetStorage();
+  // int count = 0;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    if (box.read('key') != null) {
+      controller.counter = box.read('key');
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
+    box.writeIfNull('key', controller.counter);
     return Scaffold(
       appBar: AppBar(
         // title: Text(titlecontroller.titlename1),
@@ -50,19 +63,21 @@ class _Page1State extends State<Page1> {
             const SizedBox(
               height: 20,
             ),
-            Obx(() {
-              return Text(
-                // controller.counter.toString(),
-                controller.counterText.string,
-                style: Theme.of(context).textTheme.headline4,
-              );
-            }),
-            // Center(
-            //   child: IconButton(
-            //       onPressed: () {
-            //         Get.isDarkMode
-            //             ? Get.changeTheme(ThemeData.light())
-            //             : Get.changeTheme(ThemeData.dark());
+            // Obx(() {
+            //   return Text(
+            //     // controller.counter.toString(),
+            //     // controller.counter.string,
+            //     // "${box.read('key')}",
+            //     box.read('key').toString(),
+
+            //     style: Theme.of(context).textTheme.headline4,
+            //   );
+            // }),
+            Text(
+              "${box.read('key')}",
+              // "$count",
+              style: Theme.of(context).textTheme.headline4,
+            ),
             const SizedBox(
               height: 20,
             ),
@@ -85,9 +100,15 @@ class _Page1State extends State<Page1> {
 
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          controller.incrementCounter();
+          // controller.incrementCounter();
+          // box.write('datacounter', controller.counter);
+          setState(() {
+            controller.incrementCounter();
+            box.write('key', controller.counter);
+            // ignore: avoid_print
+            print(box.read('key'));
+          });
         },
-        // onPressed: controller.incrementCounter,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.

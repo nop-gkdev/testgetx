@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class CounterController extends GetxController {
-  RxInt counter = 0.obs;
-  RxInt get counterText => counter;
+  int counter = 0;
   incrementCounter() {
-    counter.value++;
+    counter++;
+    update();
   }
 
   resetZero() {
@@ -35,6 +35,7 @@ class CounterController extends GetxController {
         ),
       );
     }
-    counter.value = 0;
+    counter = 0;
+    update();
   }
 }
